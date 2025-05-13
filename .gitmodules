@@ -1,0 +1,3 @@
+[submodule "Client"]
+	path = Client
+	url = https://github.com/Gagan-29/Blood_Bank.git
