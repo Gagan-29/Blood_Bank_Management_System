@@ -54,3 +54,68 @@ MongoDB:
 Install MongoDB locally: https://docs.mongodb.com/manual/installation/
 OR, use a cloud-hosted MongoDB service like MongoDB Atlas: https://www.mongodb.com/cloud/atlas
 Git
+Installation
+Clone the repository:
+
+Bash
+
+git clone https://github.com/[YourGitHubUsername]/blood-bank-management-system.git
+cd blood-bank-management-system
+Backend Setup:
+
+Navigate into the server (or backend, api) directory:
+
+Bash
+
+cd server
+Install backend dependencies:
+
+Bash
+
+npm install
+# or yarn install
+Create a .env file in the server directory and add your MongoDB connection string and JWT secret:
+
+MONGO_URI=mongodb://localhost:27017/bloodbank_db # Or your MongoDB Atlas URI
+JWT_SECRET=your_super_secret_jwt_key
+PORT=5000 # Or any desired port for your backend
+Replace bloodbank_db with your desired database name and your_super_secret_jwt_key with a strong, random string.
+
+Run the Backend Server:
+
+Bash
+
+npm start
+The backend API will start running on the port specified in your .env file (defaulting to http://localhost:5000).
+
+Frontend Setup:
+
+Open a new terminal window and navigate back to the project root, then into the client (or frontend, web) directory:
+
+Bash
+
+cd ../client
+Install frontend dependencies:
+
+Bash
+
+npm install
+# or yarn install
+Ensure the Frontend can connect to the Backend: The frontend usually defaults to connecting to http://localhost:5000. If your backend is running on a different port, you might need to adjust the proxy setting in client/package.json or explicitly set the backend URL in your frontend code.
+
+Look for "proxy": "http://localhost:5000" in client/package.json (if using Create React App).
+Or, set an environment variable for the backend URL if your frontend build setup uses it (e.g., REACT_APP_API_URL=http://localhost:5000).
+Run the Frontend Application:
+
+Bash
+
+npm start
+The frontend application will typically open in your default web browser at http://localhost:3000.
+
+🖥️ Usage
+Access the application: Once both frontend and backend servers are running, open your web browser and navigate to http://localhost:3000.
+Register/Login: As a new user, you can register an account. Upon successful registration, you can log in to the system.
+Admin/Staff Interface:
+If you have an admin account, you can manage donors, blood inventory, recipient requests, and view reports.
+Explore different sections like "Donor Management," "Blood Stock," "Requests," and "Reports" to interact with the system's functionalities.
+Donor/Recipient Interface: (If applicable) If your system has separate interfaces for donors or recipients, describe how they can access and use their respective features (e.g., view donation history, request blood).
